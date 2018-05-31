@@ -1,0 +1,27 @@
+{
+  "name": "catalog-static",
+  "version": "1.0.0",
+  "description": "A static HTML template for catalog.wvu.edu.",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.49",
+    "@babel/preset-env": "^7.0.0-beta.49",
+    "browser-sync": "^2.24.4",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-babel": "^8.0.0-beta.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^1.2.3",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/wvudigital/catalog-static.git"
+  },
+  "author": "Adam Johnson",
+  "license": "MIT",
+  "dependencies": {}
+}

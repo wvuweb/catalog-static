@@ -1,0 +1,19 @@
+// Custom base rules
+//==================================================
+// Overriding / adding new base selectors.
+// No classes or id's are allowed in this file.
+
+a {
+  abbr {
+    cursor: pointer;
+  } //abbr
+} //a
+
+abbr {
+  font-variant: initial;
+} //abbr
+
+abbr[title] {
+  border-bottom: 1px dotted;
+  text-decoration: none;
+} //abbr[title]

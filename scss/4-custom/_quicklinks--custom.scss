@@ -1,0 +1,23 @@
+// Quicklinks
+//==================================================
+// Custom quicklinks styles.
+
+.wvu-quicklinks {
+  ul li {
+    background: url('../images/diagonal-gold.png') no-repeat 0 0;
+    background-image: url('../images/diagonal-gold.svg');
+    background-size: 20px;
+  } //ul li
+  a {
+    &:hover {
+      text-decoration: underline;
+    } //&:hover
+  } //a
+} //.wvu-quicklinks
+
+.wvu-quicklinks__header {
+  @include mq($bp-large) {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  } //mq
+} //.wvu-quicklinks__header

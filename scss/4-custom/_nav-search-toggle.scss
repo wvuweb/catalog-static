@@ -1,0 +1,18 @@
+// Nav & Search Toggle
+//==================================================
+// Custom styles for the mobile "Menu" and Search icons.
+
+// Make "Open/Close Menu" button narrower to accomodate for search icon.
+.nav-toggle {
+  border-bottom: 0;
+  width: 80%;
+} //.nav-toggle
+
+// Pulling these from this repo instead of patterns.wvu.edu for performance reasons.
+.wvu-nav__search-toggle.inactive-search {
+  background-image: url('../images/search-icon.png');
+} //.wvu-nav__search-toggle.inactive-search
+
+.wvu-nav__search-toggle.active-search {
+  background-image: url('../images/hide-search-icon.png');
+} //.wvu-nav__search-toggle.active-search

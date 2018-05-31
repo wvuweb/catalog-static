@@ -1,0 +1,117 @@
+// Dark backgrounds
+
+@each $color, $text-color in (blue, $wvu-blue),
+                             (dune, $wvu-dune),
+                             (limed-spruce, $wvu-limed-spruce),
+                             (pine-cone, $wvu-pine-cone),
+                             (schooner, $wvu-schooner),
+                             (smalt, $wvu-smalt),
+                             (endeavor, $wvu-endeavor),
+                             (eden, $wvu-eden),
+                             (xanadu, $wvu-xanadu),
+                             (reef-gold, $wvu-reef-gold),
+                             (well-read, $wvu-well-read),
+                             (judge-gray, $wvu-judge-gray),
+                             (trinidad, $wvu-trinidad) {
+  .wvu-#{$color} {
+    color: $text-color;
+    border-color: $text-color;
+    &.background {
+      $text-color-gradient: shade($text-color, 5%);
+      color: white;
+      background-color: $text-color;
+      @include background-image(linear-gradient($text-color-gradient, $text-color));
+      -webkit-font-smoothing: antialiased;
+      h1, h2, h3, h4, h5, h6, a, .button {
+        color: white;
+        a {
+          color: white;
+        }
+      }
+      .button {
+        border-color: white;
+        &:hover {
+          background-color: white;
+          color: $text-color;
+        }
+      }
+    }
+  }
+}
+
+// Light backgrounds
+
+@each $color, $text-color in (gold, $wvu-gold),
+                             (off-white, $wvu-white),
+                             (gray-chateau, $wvu-gray-chateau),
+                             (tide, $wvu-tide),
+                             (morning-glory, $wvu-morning-glory),
+                             (candelight, $wvu-candelight),
+                             (tangerine, $wvu-tangerine),
+                             (summer-green, $wvu-summer-green) {
+  .wvu-#{$color} {
+    color: $text-color;
+    border-color: $text-color;
+    &.background {
+      $text-color-gradient: shade($text-color, 5%);
+      color: $wvu-dune;
+      background-color: $text-color;
+      @include background-image(linear-gradient($text-color-gradient, $text-color));
+      -webkit-font-smoothing: antialiased;
+      h1, h2, h3, h4, h5, h6, a, .button {
+        color: $wvu-dune;
+        a {
+          color: $wvu-dune;
+        }
+      }
+      .button {
+        border-color: $wvu-dune;
+        &:hover {
+          background-color: $wvu-dune;
+          color: $text-color;
+        }
+      }
+    }
+  }
+}
+
+.wvu-gold-pattern {
+  &.background {
+    @include wvu-gold-background();
+    background-color: $wvu-gold;
+    background-image: url(https://admissions.wvu.edu/images/wvu-pattern-background--gold.png);
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+$i: 100;
+@while $i > 0 {
+  @each $color, $text-color in (gray-chateau, $wvu-gray-chateau),
+                               (tide, $wvu-tide),
+                               (dune, $wvu-dune),
+                               (limed-spruce, $wvu-limed-spruce),
+                               (pine-cone, $wvu-pine-cone),
+                               (schooner, $wvu-schooner) {
+    .wvu-#{$color}-tint-#{$i} {
+      color: tint($text-color, $i);
+      border-color: tint($text-color, $i);
+      &.background {
+        color: $wvu-dune;
+        background-color: tint($text-color, $i);
+        -webkit-font-smoothing: antialiased;
+      }
+    }
+    .wvu-#{$color}-shade-#{$i} {
+      color: shade($text-color, $i);
+      border-color: shade($text-color, $i);
+      &.background {
+        color: white;
+        background-color: shade($text-color, $i);
+        -webkit-font-smoothing: antialiased;
+      }
+    }
+  }
+  $i: $i - 10;
+}

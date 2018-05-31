@@ -1,0 +1,12 @@
+// Main
+//==================================================
+// Customn styles for the main content region.
+
+.main,
+.wvu-sidebar {
+  float: left;
+  margin-top: 2rem;
+  @include mq($bp-medium) {
+    margin-top: 3rem;
+  } //mq
+} //.main, .wvu-sidebar

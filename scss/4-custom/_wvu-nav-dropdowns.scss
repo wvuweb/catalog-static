@@ -1,0 +1,458 @@
+// NOTE: This is the nav from wvu.edu. It shows dropdowns on mobile.
+// Originally from: https://bitbucket.org/wvudigital/wvu-home-new
+// Lots of stuff going on here. Styles could use love for sure.
+/* responsive-nav.js 1.0.39 by @viljamis */
+
+.wvu-nav-wrapper {
+  background-color: $wvu-black;
+  a {
+    color: white;
+    &:visited, &:hover {
+      color: white;
+    }
+  }
+  a, li {
+    max-width: 999999em;
+  }
+  button {
+    background-color: transparent;
+  }
+  .wvu-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.wvu-nav__container {
+  @include outer-container;
+}
+
+.nav-toggle img {
+  padding-right: .5rem;
+}
+
+.wvu-nav__search-toggle {
+  border-radius: 0;
+  &.inactive-search {
+    background-color: tint($wvu-black, 20%);
+    float:left;
+    position:relative;
+    z-index:999;
+    left:0;
+    top:0;
+    color: #333;
+    height: 56px;
+    width:20%;
+    text-indent: -99999em;
+    background-image: url(https://patterns.wvu.edu/images/search-icon.png);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 50% 50%;
+    padding: 4px;
+    display: inline-block;
+    cursor: pointer;
+    border:0;
+    overflow:hidden;
+    box-sizing: border-box;
+    @include mq($bp-medium) {
+      display: none;
+    }
+  }
+  &.active-search {
+    background-image: url(https://patterns.wvu.edu/images/hide-search-icon.png);
+  }
+}
+
+// ===============================================
+
+.nav-collapse {
+  ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: block;
+    list-style: none;
+  }
+  li {
+    width: 100%;
+    display: block;
+    margin: 0;
+  }
+}
+
+.js .nav-collapse {
+  clip: rect(0 0 0 0);
+  max-height: 0;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  zoom: 1;
+}
+
+.nav-collapse.opened {
+  max-height: 9999px;
+}
+
+.nav-toggle {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+@include mq($rwd-nav-bp) {
+  .js .nav-collapse {
+    position: relative;
+    &.closed {
+      max-height: none;
+    }
+  }
+  .nav-toggle {
+    display: none;
+  }
+}
+
+/* Text meant only for screen readers. */
+
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  &:focus {
+    background-color: #f1f1f1;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar. */
+  }
+}
+
+.nav-collapse {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  list-style: none;
+  width: 100%;
+  float: left;
+  ul {
+    list-style: none;
+    width: 100%;
+    float: left;
+  }
+  li {
+    float: left;
+    width: 100%;
+  }
+  a {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    float: left;
+    padding: 0.9em 1.1em;
+    text-decoration: none;
+    width: 100%;
+  }
+}
+
+@include mq($rwd-nav-bp) {
+  .nav-collapse {
+    width: auto;
+  }
+}
+
+@include mq($rwd-nav-bp) {
+  .nav-collapse li {
+    width: auto;
+  }
+}
+
+@include mq($rwd-nav-bp) {
+  .nav-collapse {
+    a {
+      border-bottom: 0;
+      border-right: 1px solid tint($wvu-black, 10%);
+      font-size: .85em;
+      padding: 1em 1.5em;
+      margin: 0;
+      float: left;
+      text-align: center;
+    }
+  }
+}
+
+/* ------------------------------------------
+  NAV TOGGLE STYLES
+--------------------------------------------- */
+
+@font-face {
+  font-family: "responsivenav";
+  src: url("../icons/responsivenav.eot");
+  src: url("../icons/responsivenav.eot?#iefix") format("embedded-opentype"), url("../icons/responsivenav.ttf") format("truetype"), url("../icons/responsivenav.woff") format("woff"), url("../icons/responsivenav.svg#responsivenav") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.nav-toggle {
+  border: none;
+  border-bottom: 1px solid tint($wvu-black, 10%);
+  box-sizing: border-box;
+  color: #fff;
+  float: left;
+  font-size: 0.85em;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  height: 56px;
+  user-select: none;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  line-height: 39px;
+  padding: 0 0.75em;
+  width: 100%;
+  &:hover, &:focus, &:active {
+    background-color: tint($wvu-black, 10%);
+  }
+}
+
+/* ------------------------------------------
+  MULTIPLE LEVELS
+--------------------------------------------- */
+
+.nav-collapse {
+  a:hover, li.focus > a {
+    background-color: tint($wvu-black, 15%);
+    text-decoration: none;
+  }
+}
+
+@media screen and (max-width: #{$rwd-nav-bp}px) {
+  .js .nav-collapse {
+    visibility: hidden;
+    &.opened {
+      visibility: visible;
+    }
+    &.multiple-level-nav {
+      &.opened.dropdown-active {
+        max-height: 9999px !important;
+      }
+      .sub-menu {
+        clip: rect(0 0 0 0);
+        max-height: 0;
+        position: absolute;
+        display: none;
+        /* This way you don't have focus on sub menu items unless you open the sub menu. */
+        overflow: hidden;
+        zoom: 1;
+        &.toggled {
+          background-color: shade($wvu-black, 30%);
+          display: block;
+          font-size: .8em;
+          max-height: 9999px;
+          padding: 1em 0;
+          position: relative;
+          a {
+            background-color: transparent;
+            border-bottom: none;
+            padding-left: 3em;
+          }
+        }
+      }
+    }
+    li {
+      position: relative;
+    }
+    .dropdown-toggle {
+      border: 1px solid tint($wvu-black, 10%);
+      color: tint($wvu-black, 70%);
+      content: "";
+      height: 40px;
+      width: 40px;
+      padding: 0;
+      position: absolute;
+      margin: 0;
+      text-transform: lowercase;
+      top: 5px;
+      right: 4%;
+      &:hover, &:focus, &:active {
+        background-color: #fff;
+        color: #212428;
+      }
+      &:after {
+        content: "+";
+        font-size: 20px;
+      }
+      &.toggled:after {
+        content: "-";
+      }
+    }
+  }
+  /* Enable active class to let the navigation expand over the calculated max height. */
+}
+
+.dropdown {
+  ul {
+    a {
+      background: #282e34;
+      padding-left: 1.5em;
+    }
+    ul {
+      a {
+        background: #2d353e;
+        padding-left: 2.5em;
+      }
+      border: 0;
+      padding: 0;
+    }
+  }
+  .dropdown.opened .has-dropdown {
+    background: #9c2c12;
+  }
+}
+
+@include mq($rwd-nav-bp) {
+  .dropdown-toggle {
+    display: none;
+  }
+}
+
+@include mq($rwd-nav-bp) {
+  .nav-collapse {
+    padding-right: 4%;
+    position: relative;
+  }
+  .js .nav-collapse {
+    max-height: none;
+    overflow: visible;
+    .dropdown ul {
+      max-height: none;
+      overflow: visible;
+    }
+  }
+  .has-dropdown:after {
+    font-size: 1.5em;
+    line-height: 0.8;
+    float: right;
+    content: "";
+    width: 0;
+    height: 0;
+    margin: 1.2em 0 0 0.5em;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff;
+  }
+  .dropdown ul .has-dropdown:after {
+    content: "";
+    width: 0;
+    height: 0;
+    margin: 0.3em 0 0 0.5em;
+    border-bottom: 5px solid transparent;
+    border-top: 5px solid transparent;
+    border-left: 5px solid #fff;
+  }
+  .nav-collapse {
+    .dropdown {
+      position: relative;
+      li {
+        width: 100%;
+      }
+      ul a {
+        text-align: left;
+        border: 0;
+      }
+    }
+    li {
+      border: 0;
+      display: inline-block;
+      height: 55px;
+      line-height: 55px;
+      position: relative;
+      &:first-child {
+        a {
+          border-left: 1px solid tint($wvu-black, 10%);
+        }
+      }
+    }
+    a {
+      display: inline-block;
+      padding: 0 13px;
+    }
+    ul ul {
+      float: left;
+      margin: 0;
+      position: absolute;
+      top: 85px;
+      left: -999em;
+      z-index: 9999999;
+      text-align: center;
+    }
+    li li {
+      border: 0;
+      display: block;
+      height: auto;
+      line-height: 1.0909090909;
+      &:first-child {
+        a {
+          border-left: 0;
+        }
+      }
+    }
+    ul {
+      ul {
+        ul {
+          left: -999em;
+          top: 20px;
+        }
+        a {
+          padding: 15px 12px;
+          white-space: normal;
+          width: 150px;
+        }
+      }
+      li {
+        &:hover > ul, &.focus > ul {
+          top: 55px;
+          left: 0;
+          margin-left: 0;
+        }
+      }
+      ul li {
+        &:hover > ul, &.focus > ul {
+          top: 0;
+          left: 0%;
+          margin-left: 150px;
+        }
+      }
+    }
+  }
+}

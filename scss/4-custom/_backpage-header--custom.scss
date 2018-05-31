@@ -1,0 +1,27 @@
+// Backpage Header
+//==================================================
+// Custom backpage header styles.
+// NOTE: Photos need to be cropped to appropriate proportions!
+// Photo Rating System:
+// ✪    = 1 Star
+// ✪✪   = 2 Stars
+// ✪✪✪  = 3 Stars
+
+
+.wvu-backpage-header {
+  // background-image: url('../images/staff-council-31212-s-0148xx.jpg');
+  // background-position: 50% 100%; // ✪✪
+  // background-image: url('../images/faculty-33822-S-MGE0348-xx.jpg');
+  // background-position: 50% 17%; // ✪✪
+  // background-image: url('../images/campus-scene33983-S-0521-JFS-XX.jpg');
+  // background-position: 50% 65%; // ✪✪✪
+  background-image: url('../images/pylons-scene33892-S-0013-JFS-XX.jpg');
+  background-position: 50% 35%; // ✪✪✪
+  background-image: url('../images/pylons-scene33892-s-0013-jfs-xx_01--blur.jpg');
+  background-position: 50% 12%; // ✪✪✪
+  h1 {
+    &::before {
+      background-size: 280px;
+    } //&::before
+  } //h1
+} //.wvu-backpage-header

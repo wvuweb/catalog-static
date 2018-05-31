@@ -1,0 +1,578 @@
+$wvu-blue: #002855;
+$wvu-gold: #EAAA00;
+$black: #2C2A29;
+$pms-300-c: #005EB8;
+
+$wvu-masthead-two-line-lockup: false !default;
+$wvu-masthead-background: 'blue' !default;
+$wvu-masthead-has-signature: true !default;
+
+$flying-wv-w-signature: '../images/flying-wv-w-signature.png' !default;
+$flying-wv-w-signature-gold-bg: 'https://patterns.wvu.edu/images/flying-wv-w-signature-gold-bg.png' !default;
+$flying-wv-w-signature-white-bg: 'https://patterns.wvu.edu/images/flying-wv-w-signature-white-bg.png' !default;
+$flying-wv-w-sub-brand: 'https://patterns.wvu.edu/images/flying-wv-w-signature.png' !default;
+
+/*
+  Variable options for WVU Masthead Background:
+  gold
+  blue
+  white
+  blue-pattern
+  gold-pattern
+*/
+
+@mixin wvu-masthead-is-two-line-lockup() {
+  @if $wvu-masthead-two-line-lockup == true {
+    .wvu-masthead__title { font-size: 0.6em; line-height: 1.08333333em; float: left; margin-top: 0.1em;
+      @include mq($bp-medium) {
+        font-size: 0.75em;
+      }
+    }
+    .wvu-masthead__university-name { top: 7.1em;
+      @include mq($bp-medium) {
+        top: 7.1em;
+      }
+    }
+  }
+}
+
+@mixin wvu-masthead-background() {
+  @if $wvu-masthead-background == 'gold' {
+    .wvu-masthead { background-color: $wvu-gold; color: $wvu-blue; background-image: none; }
+    input[type="submit"] {
+      &.form-search__submit { border-color: $wvu-blue; background-color: $wvu-blue;
+        &:hover { background-color: $wvu-blue; border-color: $wvu-blue; }
+      }
+    }
+    .wvu-masthead__logo { background: url(https://patterns.wvu.edu/images/flying-wv-blue.png) no-repeat top 1.2em left; background-size: 1.8em; color: $wvu-blue;
+      &:hover { color: $pms-300-c; }
+      &:visited { color: $wvu-blue; }
+    }
+    .wvu-masthead__link { color: $wvu-blue;
+      &:hover { color: $wvu-base-link-color; }
+    }
+    .wvu-masthead__college-link { background: $wvu-blue; color: white;
+      &:hover { color: white; }
+      &:visited { color: white }
+    }
+    .wvu-masthead__college-link {
+      a { background: $wvu-blue; color: white; }
+    }
+  }
+  @else if $wvu-masthead-background == 'white' {
+    .wvu-masthead { background-color: white; color: $black; background-image: none; }
+    input[type="submit"] {
+      &.form-search__submit { border-color: $wvu-blue; background-color: $wvu-blue;
+        &:hover { background-color: $wvu-gold; border-color: $wvu-gold; }
+      }
+    }
+    .wvu-masthead__logo { color: $wvu-blue;
+      &:hover { color: $pms-300-c; };
+    }
+    .wvu-masthead__link { color: $wvu-blue;
+      &:hover { color: $wvu-base-link-color; }
+    }
+    .wvu-masthead__college-link {
+      &:hover { color: white; }
+      &:visited { color: $black }
+      a {
+        background: $wvu-gold; color: $black;
+      }
+    }
+  }
+  @else if $wvu-masthead-background == 'blue-pattern' {
+    .wvu-masthead { background: url(https://patterns.wvu.edu/images/pattern-blue.jpg) no-repeat; background-size: cover; background-color: $wvu-blue; -webkit-font-smoothing: antialiased;}
+  }
+  @else if $wvu-masthead-background == 'gold-pattern' {
+    .wvu-masthead { background: url(https://patterns.wvu.edu/images/pattern-gold.jpg) no-repeat; color: $wvu-blue; background-size: cover; }
+    input[type="submit"] {
+      &.form-search__submit { border-color: $wvu-blue; background-color: $wvu-blue;
+        &:hover { background-color: $wvu-blue; border-color: $wvu-blue; }
+      }
+    }
+    .wvu-masthead__logo { background: url(https://patterns.wvu.edu/images/flying-wv-blue.png) no-repeat top 1.2em left; background-size: 1.8em; color: $wvu-blue;
+      &:hover { color: $pms-300-c; }
+    }
+    .wvu-masthead__link { color: $wvu-blue;
+      &:hover { color: $wvu-base-link-color; }
+    }
+    .wvu-masthead__college-link {
+      &:hover { color: white; }
+      &:visited { color: white }
+      a {
+        background: $wvu-blue; color: white;
+      }
+    }
+  }
+  @else {
+    .wvu-masthead { background-color: $wvu-blue; color: white; -webkit-font-smoothing: antialiased;}
+    .wvu-masthead__logo { color: white;
+      &:visited { color: white; }
+    }
+    .wvu-masthead__link { color: white;
+      &:visited { color: white; }
+      &:hover { color: white; }
+    }
+    .wvu-masthead__college-link {
+      &:hover { color: $wvu-blue; }
+      &:visited { color: $wvu-blue; }
+      a {
+        background: $wvu-gold; color: $wvu-blue;
+      }
+    }
+  }
+}
+
+@mixin wvu-masthead-has-signature() {
+  @if $wvu-masthead-has-signature == true {
+    .wvu-masthead__logo {
+      background-repeat: no-repeat;
+      background-position: top 1.2em left;
+      background-size: 300px;
+      padding-left: 54px;
+      padding-bottom: 1em;
+    }
+    .wvu-masthead__logo--mini {
+      background-size: 250px;
+      background-position: top 0.5em left;
+    }
+    .wvu-masthead__title {
+      padding-top: 46px;
+      display: inline-block;
+      font-size: 12px;
+      line-height: 14px;
+      text-transform: uppercase;
+      @include mq($bp-small) {
+        font-size: 14px;
+        line-height: 16px;
+      }
+      @include mq($bp-medium) {
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+    .wvu-masthead__university-name {
+      position: absolute;
+      left: -99999em;
+    }
+    @if $wvu-masthead-background == 'white' {
+      .wvu-masthead__logo {
+        background-image: url($flying-wv-w-signature-white-bg);
+      }
+
+    }
+    @else if $wvu-masthead-background == 'gold' {
+      .wvu-masthead__logo {
+        background-image: url($flying-wv-w-signature-gold-bg);
+      }
+    }
+    @else {
+      .wvu-masthead__logo {
+        background-image: url($flying-wv-w-signature);
+      }
+    }
+  }
+  @else {
+    .wvu-masthead__logo {
+      background-repeat: no-repeat;
+      background-position: top 1.2em left;
+      background-size: 300px;
+      padding-left: 54px;
+      padding-bottom: 1em;
+    }
+    .wvu-masthead__logo--mini {
+      background-size: 250px;
+      background-position: top 0.5em left;
+      @include mq($bp-medium) {
+        background-position: top 0.4em left;
+      }
+    }
+    .wvu-masthead__title {
+      padding-top: 46px;
+      display: inline-block;
+      font-size: 12px;
+      line-height: 14px;
+      text-transform: uppercase;
+      @include mq($bp-small) {
+        font-size: 14px;
+        line-height: 16px;
+      }
+      @include mq($bp-medium) {
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+    .wvu-masthead__university-name {
+      position: absolute;
+      left: -99999em;
+    }
+    @if $wvu-masthead-background == 'white' {
+      .wvu-masthead__logo {
+        background-image: url($flying-wv-w-signature-white-bg);
+      }
+
+    }
+    @else if $wvu-masthead-background == 'gold' {
+      .wvu-masthead__logo {
+        background-image: url($flying-wv-w-signature-gold-bg);
+      }
+    }
+    @else {
+      .wvu-masthead__logo {
+        background-image: url($flying-wv-w-signature);
+      }
+    }
+  }
+}
+
+@mixin wvu-masthead-is-sub-brand() {
+  @if $wvu-masthead-is-sub-brand == true {
+    .wvu-masthead__logo {
+      background-image: url($flying-wv-w-sub-brand);
+      background-position: 0 1.45em;
+      background-size: 320px;
+      padding-bottom: 3.5em;
+      @include mq($bp-medium) {
+        background-size: 410px;
+      }
+    }
+    .wvu-masthead__title {
+      display: none;
+    }
+  }
+}
+
+.wvu-masthead {
+  fieldset {
+    background: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.wvu-masthead__apply-links {
+  font-size: .8em;
+  margin-bottom: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  @include mq($bp-medium) {
+    font-size: 1em;
+    margin-bottom: 0;
+    padding-top: 2.7em;
+    text-align: right;
+  }
+  .button {
+    &:first-child {
+      color: $wvu-gold; border: 2px solid $wvu-gold;
+      &:visited { color: $wvu-gold; }
+      &:hover { background: $wvu-gold; color: $black; border: 2px solid $wvu-gold}
+    }
+    &:nth-child(2) {
+      color: $pms-629-c; border: 2px solid $pms-629-c;
+      &:visited { color: $pms-629-c; }
+      &:hover { background: $pms-629-c; color: $black; }
+    }
+    &:nth-child(3) {
+      color: $pms-144-c; border: 2px solid $pms-144-c;
+      &:visited { color: $pms-144-c; }
+      &:hover { background: $pms-144-c; color: $black; }
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.wvu-masthead__apply-links--mini {
+  background-color: shade($wvu-blue, 30%);
+  float: left;
+  font-size: .7em;
+  font-weight: bold;
+  padding: 0 .75em;
+  text-align: left;
+  a {
+    display: inline-block;
+    padding: .5em;
+    text-decoration: none;
+    &:first-child {
+      &:visited,
+      &:hover,
+      &:link {
+        color: $wvu-gold;
+      }
+    }
+    &:nth-child(2) {
+      &:visited,
+      &:hover,
+      &:link {
+        color: $wvu-morning-glory;
+      }
+    }
+    &:nth-child(3) {
+      &:visited,
+      &:hover,
+      &:link {
+        color: $wvu-tangerine;
+      }
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.wvu-masthead--gold {
+  .wvu-masthead__apply-links--mini {
+    background-color: tint($wvu-gold, 10%);
+  }
+  .wvu-masthead__apply-links, .wvu-mastheaad__apply-links--mini {
+    a, .button {
+      &:first-child {
+        &:visited,
+        &:link {
+          border-color: $wvu-limed-spruce;
+          color: $wvu-limed-spruce;
+        }
+      }
+      &:nth-child(2) {
+        &:visited,
+        &:link {
+          border-color: $wvu-well-read;
+          color: $wvu-well-read;
+        }
+      }
+      &:nth-child(3) {
+        &:visited,
+        &:link {
+          border-color: $wvu-endeavor;
+          color: $wvu-endeavor;
+        }
+      }
+    }
+    a.button {
+      &:first-child, &:nth-child(2), &:nth-child(3) {
+        &:hover {
+          border-color: $wvu-blue;
+          background-color: $wvu-blue;
+          color: $wvu-gold;
+        }
+      }
+    }
+  }
+}
+
+.wvu-masthead__logo {
+  &:hover { text-decoration: none; }
+}
+
+.wvu-masthead__title {
+  font-size: 0.85em;
+  @include mq($bp-micro) {
+    font-size: inherit;
+  }
+}
+
+.wvu-masthead__container { padding: 0 1em;
+  @include mq($bp-xlarge) { padding: 0; }
+}
+
+.wvu-masthead__logo { text-decoration: none; position: relative; padding: 1em 0 1.6em 2em; font-size: 1.2em; overflow: hidden; border: 0; background-color: transparent; width: 100%; background: url(../images/flying-wv.png) no-repeat top 1.2em left; background-size: 1.8em; float: left; color: white;
+  &:hover { color: #ddd; }
+  @include mq($bp-micro) { font-size: 1.5em; }
+  @include mq($bp-medium) { font-size: 1.75em; }
+  @include mq($bp-large) { font-size: 2em; }
+}
+
+.wvu-masthead__college { position: absolute; top: 1em; font-size: 0.8em; text-transform: uppercase; }
+//.wvu-masthead__university-name { position: absolute; top: 4.2em; left: 3.3em; font-size: 0.6em; text-transform: uppercase;
+//  @include mq($bp-medium) {
+//    top: 5.9em; left: 5.1em; font-size: 0.4em;
+//  }
+//}
+
+.wvu-masthead__logo:before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 0;
+}
+
+.form-search__field {
+  color: $black;
+}
+
+.wvu-masthead__search-bar {
+  font-size: 0.8em;
+  padding-bottom: 4em;
+  padding-top: .5em;
+  @include mq($bp-medium) {
+    padding-bottom: 0;
+  }
+  input[type="checkbox"], input[type="radio"] { margin-right: 0; }
+}
+
+.form-search__label {
+  width: 82.94039%;
+  margin-right: 2.35765%;
+  float: left;
+}
+
+input[type="submit"] {
+  &.form-search__submit {
+    width: 14.70196%;
+    margin-right: 0;
+    float: left;
+  }
+}
+
+.wvu-masthead__college-link {
+  position: relative;
+}
+
+.wvu-masthead__college-link a {
+  font-size: 0.8em;
+  line-height: 1.08333333em;
+  padding: 0.4em 0.5em;
+  margin-bottom: -2em;
+  @include mq($bp-medium) { position: absolute; }
+}
+
+.wvu-masthead__link {
+  color: white;
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: .5em;
+  @include mq($bp-medium) {
+    margin-bottom: 0;
+  }
+  &:hover {
+    color: white;
+    text-decoration: underline;
+  }
+}
+
+.wvu-masthead__links {
+  color: tint($wvu-blue, 20%);
+  clear: both;
+  font-size: .8em;
+  margin-top: 2.15em;
+}
+
+@include wvu-masthead-is-two-line-lockup();
+@include wvu-masthead-background();
+@include wvu-masthead-has-signature();
+@include wvu-masthead-is-sub-brand();
+
+.wvu-masthead__logo--mini {
+  background-size: 250px;
+  background-position: top 0.6em left;
+  padding-bottom: 1.6em;
+  @include mq($bp-medium) {
+    background-position: top 0.5em left;
+    padding-bottom: 1em;
+    font-size: 2em;
+  }
+}
+
+.wvu-masthead__college-link {
+  a {
+    text-decoration: none;
+    &.edit-mode {
+      display: none;
+    }
+  }
+}
+
+.wvu-masthead__logo--edit-mode {
+  display: none;
+}
+
+.wvu-masthead--custom-logo {
+  .wvu-masthead__logo {
+    background-position: top left;
+    height: 54px;
+    margin-bottom: 1.25em;
+    margin-top: 1.25em;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+  .wvu-masthead__title {
+    position: absolute;
+    top: -99999em;
+  }
+}
+
+.wvu-masthead__org-link {
+  color: white;
+  font-weight: bold;
+  &:visited, &:hover {
+    color: white;
+  }
+}
+
+.wvu-masthead__search-slider {
+  clear: both;
+	position:absolute;
+	top:-300px;
+	-webkit-transition-property: all;
+	-webkit-transition-duration: .5s;
+	-webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	-moz-transition-property: all;
+	-moz-transition-duration: .5s;
+	-moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	-ms-transition-property: all;
+	-ms-transition-duration: .5s;
+	-ms-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	transition-property: all;
+	transition-duration: .5s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	width:100%;
+	@include mq($bp-medium) { position:static; }
+  &.closed {
+  	position:relative;
+  	top:0;
+  	background: transparent;
+  }
+}
+
+// Layout
+// ==============================
+
+.wvu-masthead--buttons {
+  .wvu-masthead__logo {
+    @include mq($bp-medium) {
+      @include span-columns(6);
+    }
+    @include mq($bp-large) {
+      @include span-columns(6);
+    }
+  }
+  .wvu-masthead__apply-links {
+    @include mq($bp-medium) {
+      @include span-columns(6);
+    }
+  }
+}
+
+.wvu-masthead__container {
+  @include outer-container();
+}
+
+.wvu-masthead__logo {
+  @include mq($bp-medium) {
+    @include span-columns(7.5);
+  }
+  @include mq($bp-large) {
+    @include span-columns(8.5);
+  }
+}
+
+.wvu-masthead__utility-nav {
+  @include mq($bp-medium) {
+    @include span-columns(4.5);
+  }
+  @include mq($bp-large) {
+    @include span-columns(3.5);
+  }
+}

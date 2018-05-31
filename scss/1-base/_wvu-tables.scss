@@ -1,0 +1,63 @@
+table {
+  border-collapse: collapse;
+  margin: ($base-spacing / 2) 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+th {
+  border-bottom: 1px solid darken($base-border-color, 15);
+  font-weight: bold;
+  padding: ($base-spacing / 2) 0;
+  text-align: left;
+}
+
+td {
+  border-bottom: $base-border;
+  padding: ($base-spacing / 2) 0;
+}
+
+tr,
+td,
+th {
+  vertical-align: top;
+}
+
+tfoot {
+  tr {
+    &:first-child {
+      td, th {
+        border-top: 2px solid $black;
+      }
+    }
+    &:last-child {
+      border-bottom: 0;
+      td, th {
+        border-bottom: 0;
+      }
+    }
+  }
+}
+
+/* Directory table override */
+
+tr {
+     margin:0;
+     border-bottom: $base-border;
+}
+
+td {
+     border-bottom: none;
+     padding:0.75em 1.5em 0.75em 0;
+}
+
+@media screen and (max-width: $grid-mq-tablet) {
+  tr {
+    display: block;
+    padding-bottom:20px;
+  }
+  td {
+    display: block;
+    padding:10px 0 0 0;
+  }
+}

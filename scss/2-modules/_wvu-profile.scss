@@ -1,0 +1,60 @@
+.wvu-profile {
+  a {
+    &.edit-mode {
+      display: none;
+    }
+  }
+}
+
+.wvu-profile__content {
+  a {
+    &.edit-mode {
+      display: none;
+    }
+  }
+}
+
+.wvu-profile__photo {
+  margin-top: 38px;
+  margin-bottom: 18px;
+}
+
+.wvu-profiles-index__name {
+  margin-bottom: 18px;
+}
+
+.wvu-profile__job-title {
+  text-transform: uppercase;
+}
+
+.wvu-profile__phone-icon {
+  color: $base-font-color;
+  text-decoration: none;
+}
+
+// Icons from the IcoMoon free icon library
+// https://icomoon.io
+.wvu-profile__phone-icon, .wvu-profile__email {
+  background: url(https://patterns.wvu.edu/images/1444934192/icon-phone.svg) no-repeat left 3px;
+  background-size: 18px;
+  padding-left: 2em;
+}
+
+.wvu-profile__email {
+  background-image: url(https://patterns.wvu.edu/images/1444934192/icon-mail.svg);
+}
+
+// Layout
+// ================================
+
+.wvu-profile__contact-and-photo {
+  @include mq($bp-medium) {
+    @include span-columns(4);
+  }
+}
+
+.wvu-profile__content {
+  @include mq($bp-medium) {
+    @include span-columns(8);
+  }
+}

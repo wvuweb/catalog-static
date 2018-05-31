@@ -1,0 +1,138 @@
+.wvu-landingpage-header {
+  background-color: $pms-432-c;;
+  background-position: 50% 50%;
+  background-size: cover;
+  color: white;
+  display: table;
+  position: relative;
+  width: 100%;
+  a {
+    color: white;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: white;
+  }
+  h1 {
+    clear: both;
+    margin-bottom: 0;
+    margin-top: 10px;
+    position: relative;
+    span {
+      position: relative;
+      z-index: 3;
+    }
+  }
+  p {
+    font-size: 1.5em;
+    margin-bottom: 2em;
+    position: relative;
+    z-index: 3;
+    span {
+      position: relative;
+      z-index: 3;
+    }
+  }
+  h1, p, a {
+    text-shadow: 1px 1px 1px #000000;
+  }
+}
+
+.wvu-landingpage-header--big-photo {
+  .wvu-landingpage-header__container {
+    @include so-vignetting($wvu-hero-vignetting-opacity);
+  }
+}
+
+.wvu-landingpage-header__badge {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.7+0,0.7+100 */
+  background: -moz-linear-gradient(top,  rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.3) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3000000', endColorstr='#b3000000',GradientType=0 ); /* IE6-9 */
+  border-radius: 2px;
+  clear: both;
+  color: white;
+  display: inline-block;
+  padding: .5em .7em;
+  position: relative;
+  text-transform: uppercase;
+  z-index: 3;
+}
+
+.wvu-landingpage-header__container {
+  @include so-vignetting($wvu-hero-vignetting-opacity);
+  padding-bottom: 2.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 2.5em;
+  @include mq($bp-xlarge) {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.wvu-landingpage-header__subnav-button-container {
+  display: inline-block;
+  float: right;
+  position: relative;
+  width: 100%;
+  z-index: 9999999;
+  button {
+    background-color: #4CAF50;
+    color: white;
+    display: table;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    padding-right: 2em;
+    width: 100%;
+    &:after {
+      content: '\25BE';
+      position: absolute;
+      right: 1em;
+    }
+  }
+  ul {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    width: 100%;
+    a {
+      display: block;
+      padding: .5em;
+    }
+  }
+  &:hover {
+    ul {
+      display: block;
+      margin-top: 0;
+      z-index: 99999999;
+    }
+  }
+}
+
+// Layout
+// ==================================
+
+.wvu-landingpage-header__container {
+  @include outer-container();
+}
+
+.wvu-landingpage-header__labels {
+  @include mq($bp-medium) {
+    @include span-columns(7);
+  }
+}
+
+ .wvu-landingpage-header__subnav {
+   @include mq($bp-medium) {
+     @include span-columns(4);
+     @include shift(1);
+   }
+ }
