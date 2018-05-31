@@ -1,13 +1,15 @@
 catalog-static
 ==================
 
+![Preview of the Course Catalog Template](https://raw.githubusercontent.com/wvuweb/catalog-static/master/images/catalog-html-template-preview.jpg)
+
 **Theme description:** A WVU branded template for Catalog.wvu.edu made with vanilla HTML. This template could be easily adapted to apply WVU's brand to other applications. 
 
 **Developers name(s):** Adam Johnson
 
 **Github repository URL:** [https://github.com/wvuweb/catalog-static](https://github.com/wvuweb/catalog-static)
 
-**Site URL:** Production: [https://catalog.wvu.edu](https://catalog.wvu.edu)
+**Site URL:** Production: [https://catalog.wvu.edu](https://catalog.wvu.edu). Development: [https://wvuweb.github.io/catalog-static/](https://wvuweb.github.io/catalog-static/)
 
 **Dependencies:** [NodeJS](https://nodejs.org/en/), [Gulp](http://gulpjs.org), all of it's dependencies and Node packages.
 
@@ -50,6 +52,10 @@ WVU's course catalog is run and hosted by a third-party vendor called [CourseLea
 This is a flat HTML template which uses styles from WVU's pattern library, [Supertheme](https://supertheme.sandbox.wvu.edu). Supertheme was built for [CleanSlate CMS](https://cleanslatecms.wvu.edu), WVU's mutli-site content management system. This template has abstracted the HTML from CleanSlate Radius Templates to flat, vanilla HTML. You could easily use this template to wrap any app or service with WVU branding. There's a psuedo "style-guide" in the tabs of this HTML file. You can also see more options on the [Supertheme website](https://supertheme.sandbox.wvu.edu).
 
 This theme uses [Sass](http://sass-lang.com/) and Gulp to compile the CSS. I have specifically commented out various partials in `scss/1-base/base-dir.scss` and `scss/2-modules/modules-dir.scss` because Catalog didn't use those patterns (performance!). If you want to use some of the commented out patterns (maybe you need two, three or four column stuff), follow the install instructions, run `gulp` and uncomment the requisite Sass partials.
+
+### Fonts.com
+
+This theme uses Helvetica Neue from fonts.com. We've whitelisted fonts.com to `*.wvu.edu` and local domains. As a result, the fonts will 404 if you preview them here on Github pages. To see the fonts in all their glory, clone the project and run Gulp.
 
 ## Have questions?
 
