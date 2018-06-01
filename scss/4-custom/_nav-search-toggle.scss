@@ -1,6 +1,11 @@
 // Nav & Search Toggle
 //==================================================
-// Custom styles for the mobile "Menu" and Search icons.
+// Custom styles for the mobile "Menu" and Search fancyness.
+
+// TODO: Make `.wvu-nav__custom-search-toggle` use `.visuallyhidden` instead of `text-indent: -9999em;`.
+// TODO: Audit properties under `.wvu-nav__custom-search-toggle`. Are they all necessary?
+// NOTE: This uses images local to this repo. If you want to use absolute URL's,
+// consider putting those assets on static.wvu.edu.
 
 // Make "Open/Close Menu" button narrower to accomodate for search icon.
 .nav-toggle {
@@ -8,11 +13,40 @@
   width: 80%;
 } //.nav-toggle
 
-// Pulling these from this repo instead of patterns.wvu.edu for performance reasons.
-.wvu-nav__search-toggle.inactive-search {
+.wvu-nav__custom-search-toggle {
   background-image: url('../images/search-icon.png');
-} //.wvu-nav__search-toggle.inactive-search
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  border: 0;
+  box-sizing: border-box;
+  color: $base-font-color;
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  height: 56px;
+  left: 0;
+  overflow: hidden;
+  padding: 4px;
+  position: relative;
+  text-indent: -99999em;
+  top: 0;
+  width: 20%;
+  z-index: 999;
+  @include mq($bp-medium) {
+    display: none;
+  } //mq
+  &.wvu-nav__custom-search-toggle { // Specificity, gah!
+    background-color: tint($black, 20%);
+  } //&.wvu-nav__custom-search-toggle
+} //.wvu-nav__custom-search-toggle
 
-.wvu-nav__search-toggle.active-search {
+// NOTE: Should this live somewhere else?
+.wvu-masthead__search-slider--is-visible {
+  position: relative;
+  top: 0;
+} //.wvu-masthead__search-slider--is-visible
+
+.wvu-nav__custom-search-toggle--active-search {
   background-image: url('../images/hide-search-icon.png');
-} //.wvu-nav__search-toggle.active-search
+} //.wvu-nav__custom-search-toggle--active-search
