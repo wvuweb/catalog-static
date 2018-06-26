@@ -1,27 +1,91 @@
 // Backpage Header
 //==================================================
 // Custom backpage header styles.
-// NOTE: Photos need to be cropped to appropriate proportions!
-// Photo Rating System:
-// ✪    = 1 Star
-// ✪✪   = 2 Stars
-// ✪✪✪  = 3 Stars
-
 
 .wvu-backpage-header {
-  // background-image: url('../images/staff-council-31212-s-0148xx.jpg');
-  // background-position: 50% 100%; // ✪✪
-  // background-image: url('../images/faculty-33822-S-MGE0348-xx.jpg');
-  // background-position: 50% 17%; // ✪✪
-  // background-image: url('../images/campus-scene33983-S-0521-JFS-XX.jpg');
-  // background-position: 50% 65%; // ✪✪✪
-  background-image: url('../images/pylons-scene33892-S-0013-JFS-XX.jpg');
-  background-position: 50% 35%; // ✪✪✪
-  background-image: url('../images/pylons-scene33892-s-0013-jfs-xx_01--blur.jpg');
-  background-position: 50% 12%; // ✪✪✪
+  background-image: url('../images/header-images/pylons-scene-33892-s-0013-jfs-xx--blur.jpg');
+  background-position: center top;
   h1 {
     &::before {
       background-size: 280px;
     } //&::before
   } //h1
 } //.wvu-backpage-header
+
+// Business and Economics
+.wvu-backpage-header--b-and-e {
+  background-image: url('../images/header-images/b-and-e.jpg');
+  background-position: center bottom;
+} //.wvu-backpage-header--b-and-e
+
+// WVU Tech / Beckley
+.wvu-backpage-header--beckley {
+  background-image: url('../images/header-images/beckley-34414-s-bfp-0001.jpg');
+} //.wvu-backpage-header--beckley
+
+// Education & Human Services
+.wvu-backpage-header--cehs {
+  background-image: url('../images/header-images/cehs-33230-s-bfp-1173.jpg');
+  background-position: center bottom;
+} //.wvu-backpage-header--cehs
+
+// Physical Activity & Sport Sciences
+.wvu-backpage-header--cpass {
+  background-image: url('../images/header-images/cpass.jpg');
+} //.wvu-backpage-header--cpass
+
+// Creative Arts
+.wvu-backpage-header--creative-arts {
+  background-image: url('../images/header-images/creative-arts.jpg');
+} //.wvu-backpage-header--creative-arts
+
+// Davis
+.wvu-backpage-header--davis {
+  background-image: url('../images/header-images/davis.jpg');
+} //.wvu-backpage-header--davis
+
+// Dentistry
+.wvu-backpage-header--dentistry {
+  background-image: url('../images/header-images/dentistry.jpg');
+  background-position: center bottom;
+} //.wvu-backpage-header--dentistry
+
+// Eberly
+.wvu-backpage-header--eberly {
+  background-image: url('../images/header-images/eberly.jpg');
+} //.wvu-backpage-header--eberly
+
+// Honors
+.wvu-backpage-header--honors {
+  background-image: url('../images/header-images/honors.jpg');
+} //.wvu-backpage-header--honors
+
+// Medicine
+.wvu-backpage-header--medicine {
+  background-image: url('../images/header-images/medicine.jpg');
+} //.wvu-backpage-header--medicine
+
+// Nursing
+.wvu-backpage-header--nursing {
+  background-image: url('../images/header-images/nursing.jpg');
+} //.wvu-backpage-header--nursing
+
+// Pharmacy
+.wvu-backpage-header--pharmacy {
+  background-image: url('../images/header-images/pharmacy.jpg');
+} //.wvu-backpage-header--pharmacy
+
+// Potomac State College
+.wvu-backpage-header--psc {
+  background-image: url('../images/header-images/psc.jpg');
+} //.wvu-backpage-header--psc
+
+// Public Health
+.wvu-backpage-header--public-health {
+  background-image: url('../images/header-images/public-health-34506-s-bfp-0208-xx.jpg');
+} //.wvu-backpage-header--public-health
+
+// Reed
+.wvu-backpage-header--reed {
+  background-image: url('../images/header-images/reed.jpg');
+} //.wvu-backpage-header--reed
